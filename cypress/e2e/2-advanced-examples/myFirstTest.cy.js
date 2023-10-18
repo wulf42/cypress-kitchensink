@@ -14,9 +14,16 @@ context('My First Test', () => {
         cy.get('.container').find('p').should('exist');
     })
 
+    it('renders a paragraph under the h1 in specific conteiner', () => {
+        cy.get('.container').eq(1).find('p').should('exist');
+    })
 
-
-
+    it('renders a section with the correct elements', () => {
+        cy.get('.container').eq(2).within(()=>{
+            cy.get('h4').should('exist');
+            cy.get('p').should('exist');
+        })
+    })
 
 
 })
