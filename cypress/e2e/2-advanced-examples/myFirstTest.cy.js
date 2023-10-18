@@ -1,6 +1,6 @@
 context('My First Test', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:8080/commands/actions')
+        cy.visit('/commands/actions')
     })
 
     it('has an h1 on the page', () => {
@@ -25,6 +25,8 @@ context('My First Test', () => {
         })
     })
 
-
+    it('correctly renders the cypress website link',() => { 
+    cy.findByText('cypress.io').should('exist')  
+    })
 })
         
