@@ -61,11 +61,15 @@ context('My First Test', () => {
    //    cy.findByText('This popover shows up on click').should('be.visible')
    // })
 
-   it('can click on diferent section of a canvas',()=>{
-      cy.get("#action-canvas").click('top')
-      cy.get("#action-canvas").click('bottomRight')
-      cy.get("#action-canvas").click(80,100)
-   })
+   // it('can click on diferent section of a canvas',()=>{
+   //    cy.get('#action-canvas').click('top')
+   //    cy.get('#action-canvas').click('bottomRight')
+   //    cy.get('#action-canvas').click(80,100)
+   // })
 
+   it('can double click on a canvas',()=>{
+      cy.get('.action-div').dblclick().should('not.be.visible')
+      cy.get('.action-input-hidden').should('be.visible')
+   })
 })
         
