@@ -1,9 +1,9 @@
 const navbarText = Cypress.env('navbarText');
 
 context('My First Test', () => {
-    // beforeEach(() => {
-    //     cy.visit('/commands/actions')
-    // })
+    beforeEach(() => {
+        cy.visit('/commands/actions')
+    })
 
     // it('has an h1 on the page', () => {
     //     cy.get('h1').should('exist');
@@ -31,19 +31,35 @@ context('My First Test', () => {
     // cy.findByText(navbarText).should('exist')  
     // })
 
-    it('types into an email field',()=>{
-        cy.visit('/commands/actions')
-        cy.findByPlaceholderText('Email').type('testemail@mail.com')
-        cy.wait(5000).then(()=>{
-            console.log("test is finished")
-        })
-  
+    // it('types into an email field', () => {
+    // cy.visit('/commands/actions')
+    // cy.findByPlaceholderText('Email').type('test@email.com')
+    // cy.wait(2000).then(() => {
+    //     fetch('https://api.spacexdata.com/v3/missions')
+    //     .then((res) => res.json())
+    //     .then((data)=>{
+    //         console.log(data)
+    //     })
+    // })    
+    // })
 
-    })
+   //   it('shows an active class for the current page',()=>{
+   //      cy.visit('/commands/actions')
+   //      cy.get('.dropdown-menu').find('li').eq(2).should('have.class','active')
+   //   })
 
+   //   it('should not have an active class for not active pages',()=>{
+   //      cy.visit('/commands/actions')
+   //      cy.get('.dropdown-menu').find('li').first()
+   //      .should('not.have.class','active')
+   //      .find('a')
+   //      .should('have.attr','href','/commands/querying')
+   //   })
 
-
-
+   it('triggers a popover on click', ()=>{
+      cy.get('.action-btn').click()
+      cy.findByText('This popover shows up on click').should('be.visible')
+   })
 
 
 })
