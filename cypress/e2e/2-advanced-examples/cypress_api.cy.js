@@ -4,7 +4,7 @@ context('Cypress APIs', () => {
 
   context('Cypress.Commands', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:8080/cypress-api')
+      cy.visit('/cypress-api')
     })
 
     // https://on.cypress.io/custom-commands
@@ -38,7 +38,7 @@ context('Cypress APIs', () => {
 
   context('Cypress.Cookies', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:8080/cypress-api')
+      cy.visit('/cypress-api')
     })
 
     // https://on.cypress.io/cookies
@@ -57,7 +57,7 @@ context('Cypress APIs', () => {
 
   context('Cypress.arch', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:8080/cypress-api')
+      cy.visit('/cypress-api')
     })
 
     it('Get CPU architecture name of underlying OS', () => {
@@ -68,7 +68,7 @@ context('Cypress APIs', () => {
 
   context('Cypress.config()', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:8080/cypress-api')
+      cy.visit('/cypress-api')
     })
 
     it('Get and set configuration options', () => {
@@ -76,7 +76,7 @@ context('Cypress APIs', () => {
       let myConfig = Cypress.config()
 
       expect(myConfig).to.have.property('animationDistanceThreshold', 5)
-      expect(myConfig).to.have.property('baseUrl', null)
+      expect(myConfig).to.have.property('baseUrl', 'http://localhost:8080')
       expect(myConfig).to.have.property('defaultCommandTimeout', 4000)
       expect(myConfig).to.have.property('requestTimeout', 5000)
       expect(myConfig).to.have.property('responseTimeout', 30000)
@@ -98,7 +98,7 @@ context('Cypress APIs', () => {
 
   context('Cypress.dom', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:8080/cypress-api')
+      cy.visit('/cypress-api')
     })
 
     // https://on.cypress.io/dom
@@ -114,7 +114,7 @@ context('Cypress APIs', () => {
 
   context('Cypress.env()', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:8080/cypress-api')
+      cy.visit('/cypress-api')
     })
 
     // We can set environment variables for highly dynamic values
