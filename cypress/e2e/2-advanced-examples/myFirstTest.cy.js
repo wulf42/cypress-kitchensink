@@ -31,17 +31,11 @@ context('My First Test', () => {
     cy.findByText(navbarText).should('exist')  
   })
 
-  //   it('types into an email field', () => {
-  //     cy.visit('/commands/actions')
-  //     cy.findByPlaceholderText('Email').type('test@email.com')
-  //     cy.waitUntil(()=>{
-  //       fetch('https://api.spacexdata.com/v3/missions')
-  //     }).then(() => {
-  //         .then((data)=>{
-  //           console.log(data)
-  //         })
-  //     })    
-  //   })
+  it('types into an email field', () => {
+   cy.visit('/commands/actions');
+   cy.findByPlaceholderText('Email').type('test@email.com');
+ })
+ 
 
   it('shows an active class for the current page',()=>{
     cy.visit('/commands/actions')
