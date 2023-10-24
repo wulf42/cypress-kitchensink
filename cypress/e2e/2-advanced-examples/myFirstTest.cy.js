@@ -67,9 +67,14 @@ context('My First Test', () => {
    //    cy.get('#action-canvas').click(80,100)
    // })
 
-   it('can double click on a canvas',()=>{
-      cy.get('.action-div').dblclick().should('not.be.visible')
-      cy.get('.action-input-hidden').should('be.visible')
+   // it('can double click to edit',()=>{
+   //    cy.get('.action-div').dblclick().should('not.be.visible')
+   //    cy.get('.action-input-hidden').should('be.visible')
+   // })
+   it('can right click to edit',()=>{
+      cy.get('.rightclick-action-div').rightclick().should('not.be.visible')
+      cy.get('.rightclick-action-input-hidden').should('be.visible')
    })
 })
+
         
