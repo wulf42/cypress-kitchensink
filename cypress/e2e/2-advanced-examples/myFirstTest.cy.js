@@ -71,10 +71,16 @@ context('My First Test', () => {
    //    cy.get('.action-div').dblclick().should('not.be.visible')
    //    cy.get('.action-input-hidden').should('be.visible')
    // })
-   it('can right click to edit',()=>{
-      cy.get('.rightclick-action-div').rightclick().should('not.be.visible')
-      cy.get('.rightclick-action-input-hidden').should('be.visible')
-   })
+   // it('can right click to edit',()=>{
+   //    cy.get('.rightclick-action-div').rightclick().should('not.be.visible')
+   //    cy.get('.rightclick-action-input-hidden').should('be.visible')
+   // })
+
+    it('shows the nav links on hover',()=>{
+      cy.get('.dropdown-toggle').trigger('mouseover')
+      cy.get('.dropdown-menu').should('be.visible')
+    })
+
 })
 
         
